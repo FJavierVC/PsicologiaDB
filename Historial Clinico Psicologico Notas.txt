@@ -1,0 +1,138 @@
+Historial Clinico Psicologico desde un enfoque Cognitivo Conductual
+_______________________________________________________________________________________________
+
+Ususario
+
+IdUsuario  	PK
+Nombre
+ApellidoP
+ApellidoM
+Edad
+Numero Telefonico
+Rol
+_______________________________________________________________________________________________
+
+Terapeuta
+
+IdTerapeuta 	PK
+IdUsuario 	FK
+Especialidad (Tipo de Especialidad del psicologo, ejemplo, pediatrico, etc)
+Enfoque (Enfoque psicologico Cognitivo conductual, etc)
+Email
+_______________________________________________________________________________________________
+
+Paciente
+
+IdPaciente 	PK
+IdUsuario 	FK
+Lugar_Nacimiento
+Fecha_Nacimiento
+Sexo (Masculino, Femenino, Otros)
+Estado_Civil
+Direccion
+Estudios
+Ocupacion
+_______________________________________________________________________________________________
+
+Historiales
+
+NoHistorial 	PK
+IdPaciente 	FK
+_______________________________________________________________________________________________
+
+DatosFamiliares
+
+IdFamiliar  	PK
+NoHistorial  	FK
+Nombre_M
+Edad_M
+Ocupacion_M
+Nombre_P
+Edad_P
+Ocuapacion_P
+Hermanos
+Familiares_Añadidos
+Nombre_Conyugue
+Edad_C
+Ocupacion_C
+Hijos
+_______________________________________________________________________________________________
+
+Motivos
+
+IdConsulta 	PK
+NoHistorial 	FK
+Motivo
+Pronostico (desde la perspectiva del terapeuta)
+FechaConsulta (Fecha en la que se genera la primera consulta)
+Inicio_Sintomas (Fecha de inicio de los signos y sintomas que presenta el paciente)
+_______________________________________________________________________________________________
+
+Antecendetes
+
+IdAntecedentes 	PK
+NoHistorial 	FK
+Alimenticio		(Resumir bueno, malo, regular)
+Sueño			(Resumir bueno, malo, regular)
+Descanso		(Resumir bueno, malo, regular)
+Desarrollo_psicomotor
+_______________________________________________________________________________________________
+
+PerfilSocial
+IdSocial 	PK
+NoHisotrial 	FK
+Relaciones_Afectiva (Personas con las que convive, mujer persona de 26 años X años de relacion) 
+Relacion_Amistad (Se contemplan solo dos campos, no hace falta asociar mas)
+
+_______________________________________________________________________________________________
+
+ExamenMental:   (Entidad totalmente opcional, depende del terapeutade
+
+IdExamen 	PK
+NoHistorial 	FK
+apariencia_general (atributo del tipo text, descripcion fisica breve e importantes)
+actitud			(Positiva, negativa, depresiva, ansiosa, etc...)
+estado_animo		(descripcion de emociones, cresr lista con emociones basicas)
+contenido_ideas
+(Este examen lo enfocamos en la apariencia fisica y sensorial)
+
+_______________________________________________________________________________________________
+
+Diagnostico
+
+IdDiagnostico	PK
+NoHistorial	FK
+Diagnostico (Descripcion general del diagnostivo, breve)
+Impresion_Clinica (descripcion completa sobre el diagnostico con la justificacion de los datos previamente recopilados)
+
+_______________________________________________________________________________________________
+
+Orientacion
+
+objetivo_tratamiento (Descripcion del objetivo final )
+
+tecnicas_emplear (Parrafo de texto plano donde el terapeuta pueda escribir la tecnica que seguira para cumplir con el objetivo)
+
+_____________________________________________________________________________________________
+
+CITAS
+
+IdCita 		PK
+IdPaciente	FK
+IdTerapeuta	FK
+FechaCita	
+Duracion
+Modalidad
+Estado
+Notas
+___________________________________________________________________________________________
+
+HISTORIALESCITAS
+
+IdHistorialCita		PK
+IdCita			FK
+Resumen
+Recomendaciones
+FechaRegistro
+
+
