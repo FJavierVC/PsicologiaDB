@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Datos Familiares</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        form label {
+            flex-basis: 100%;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="date"],
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form textarea {
+            resize: vertical;
+        }
+        form .submit-btn {
+            flex-basis: 100%;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        form .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Datos Familiares</h2>
+        <form action="submit_datos_familiares.php" method="POST">
+            <label for="noHistorial">Número del Historial:</label>
+            <input type="number" id="noHistorial" name="noHistorial" required>
+
+            <div class="section">
+                <h3>Información de los Padres</h3>
+                <label for="nombreM">Nombre de la Madre:</label>
+                <input type="text" id="nombreM" name="nombreM">
+
+                <label for="edadM">Edad de la Madre:</label>
+                <input type="number" id="edadM" name="edadM">
+
+                <label for="ocupacionM">Ocupación de la Madre:</label>
+                <input type="text" id="ocupacionM" name="ocupacionM">
+
+                <label for="nombreP">Nombre del Padre:</label>
+                <input type="text" id="nombreP" name="nombreP">
+
+                <label for="edadP">Edad del Padre:</label>
+                <input type="number" id="edadP" name="edadP">
+
+                <label for="ocupacionP">Ocupación del Padre:</label>
+                <input type="text" id="ocupacionP" name="ocupacionP">
+            </div>
+
+            <label for="hermanos">Número de Hermanos:</label>
+            <input type="number" id="hermanos" name="hermanos">
+
+            <label for="familiaresAdicionales">Otros Familiares Importantes:</label>
+            <textarea id="familiaresAdicionales" name="familiaresAdicionales"></textarea>
+
+            <label for="nombreC">Nombre del Conyugue:</label>
+            <input type="text" id="nombreC" name="nombreC">
+
+            <label for="edadC">Edad del Conyugue:</label>
+            <input type="number" id="edadC" name="edadC">
+
+            <label for="ocupacionC">Ocupación del Conyugue:</label>
+            <input type="text" id="ocupacionC" name="ocupacionC">
+
+            <label for="hijos">Número de Hijos:</label>
+            <input type="number" id="hijos" name="hijos">
+
+            <input type="submit" value="Registrar Datos Familiares" class="submit-btn">
+        </form>
+    </div>
+</body>
+</html>

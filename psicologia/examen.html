@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Examen Mental</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        form label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        form textarea {
+            resize: vertical;
+        }
+        form select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        form .submit-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        form .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registro de Examen Mental</h2>
+        <form action="submit_examen_mental.php" method="POST">
+            <label for="noHistorial">Número del Historial:</label>
+            <input type="number" id="noHistorial" name="noHistorial" required>
+
+            <label for="aparienciaGeneral">Apariencia General:</label>
+            <select id="aparienciaGeneral" name="aparienciaGeneral">
+                <option value="Aseado">Aseado</option>
+                <option value="Desaliñado">Desalineado</option>
+                <option value="Apropiado para la situación">Apropiado para la situación</option>
+                <option value="Inapropiado para la situación">Inapropiado para la situación</option>
+                <option value="Cansado">Cansado</option>
+                <option value="Agitado">Agitado</option>
+                <option value="Tranquilo">Tranquilo</option>
+            </select>
+
+            <label for="actitud">Actitud:</label>
+            <select id="actitud" name="actitud">
+                <option value="Colaborador">Colaborador</option>
+                <option value="Resistente">Resistente</option>
+                <option value="Hostil">Hostil</option>
+            </select>
+
+            <label for="estadoAnimo">Estado de Ánimo:</label>
+            <select id="estadoAnimo" name="estadoAnimo">
+                <option value="Alegre">Alegre</option>
+                <option value="Triste">Triste</option>
+                <option value="Ansioso">Ansioso</option>
+                <option value="Irritable">Irritable</option>
+                <option value="Apatético">Apatético</option>
+                <option value="Eufórico">Euforico</option>
+                <option value="Deprimido">Deprimido</option>
+                <option value="Calmado">Calmado</option>
+                <option value="Confundido">Confundido</option>
+                <option value="Enojado">Enojado</option>
+            </select>
+
+            <label for="contenidoIdeas">Contenido de Ideas:</label>
+            <textarea id="contenidoIdeas" name="contenidoIdeas"></textarea>
+
+            <input type="submit" value="Registrar Examen Mental" class="submit-btn">
+        </form>
+    </div>
+</body>
+</html>
